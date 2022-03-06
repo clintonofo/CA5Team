@@ -4,8 +4,11 @@ public class basketballTeam {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
+menu();
+    }
 
-
+    public static void menu()
+    {
         Scanner input = new Scanner(System.in);
         boolean mainLoop = true;
 
@@ -110,7 +113,7 @@ public class basketballTeam {
                 } else if (choice2.equalsIgnoreCase("demar")) {
                     System.out.println(bballTeam.get(t10.getPlayerName()));
                 } else if (choice2.equalsIgnoreCase("back")) {
-                    break;
+                    menu();
 
                 } else {
                     System.out.println("Wrong input");
