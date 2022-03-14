@@ -4,11 +4,10 @@ public class basketballTeam {
 
     public static void main(String[] args) {
         // TODO Auto-generated method stub
-menu();
+        menu();
     }
 
-    public static void menu()
-    {
+    public static void menu() {
         Scanner input = new Scanner(System.in);
         boolean mainLoop = true;
 
@@ -17,8 +16,8 @@ menu();
             System.out.println("Main Menu\n");
             System.out.print("1.) Display All Elements \n");
             System.out.print("2.) Choose key\n");
-            System.out.print("3.) Multiplication.\n");
-            System.out.print("4.) Division.\n");
+            System.out.print("3.) TreeMap.\n");
+            System.out.print("4.) Priority Queue for Salary.\n");
             System.out.print("5.) Generate Random Number.\n");
             System.out.print("6.) Exit\n");
             System.out.print("\nEnter Your Menu Choice: ");
@@ -148,7 +147,35 @@ menu();
 
             }
         }
-    }
-}
+
+        else if (choice == 4) {
+
+                PriorityQueue<team> teamQueue = new PriorityQueue<team>(
+                        new UserSalaryComparator(SortType.Ascending));
+
+            teamQueue.add(new team("John", "moons", 15000, "ben", "sam,", "atlanta"));
+            teamQueue.add(new team("Eoin", "rockets", 25000, "john", "oliver,", "san fracnsio"));
+            teamQueue.add(new team("liam", "spices", 35000, "ben", "sam,", "philly"));
+            teamQueue.add(new team("clinton", "ice", 5000, "rita", "sammy,", "la"));
+            teamQueue.add(new team("allen", "lakers", 15000, "luke", "sam,", "la"));
+            teamQueue.add(new team("barry", "warriors", 25000, "benson", "jamal,", "golden state"));
+            teamQueue.add(new team("lia", "clippers", 65000, "ella", "rio,", "charlotte"));
+            teamQueue.add(new team("rhia", "zooms", 15000, "lia", "clinton,", "cleveland"));
+            teamQueue.add(new team("clinton", "heat", 10000, "elsa", "ronaldo,", "chicagi"));
+            teamQueue.add(new team("demar", "raptors", 20000, "leon", "samuel,", "toronto"));
+
+
+            System.out.println("Values in order of Salary Priority:");
+                //iterator & remove
+                Iterator<team> iterator = teamQueue.iterator();
+                while (iterator.hasNext()) {
+                    System.out.println(teamQueue.remove());
+                }
+            }
+
+        }
+        }
+
+
 
 
